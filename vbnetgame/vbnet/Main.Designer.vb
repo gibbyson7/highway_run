@@ -40,6 +40,14 @@ Partial Class Main
         Me.Car = New System.Windows.Forms.PictureBox()
         Me.Left_mover = New System.Windows.Forms.Timer(Me.components)
         Me.Right_mover = New System.Windows.Forms.Timer(Me.components)
+        Me.EnemyCar1 = New System.Windows.Forms.PictureBox()
+        Me.EnemyCar2 = New System.Windows.Forms.PictureBox()
+        Me.EnemyCar3 = New System.Windows.Forms.PictureBox()
+        Me.EnemyCar4 = New System.Windows.Forms.PictureBox()
+        Me.Enemy1_Mover = New System.Windows.Forms.Timer(Me.components)
+        Me.Enemy2_Mover = New System.Windows.Forms.Timer(Me.components)
+        Me.Enemy3_Mover = New System.Windows.Forms.Timer(Me.components)
+        Me.Enemy4_Mover = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,12 +61,16 @@ Partial Class Main
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Car, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EnemyCar1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EnemyCar2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EnemyCar3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EnemyCar4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.White
-        Me.PictureBox1.Location = New System.Drawing.Point(157, -43)
+        Me.PictureBox1.Location = New System.Drawing.Point(121, -43)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(25, 135)
         Me.PictureBox1.TabIndex = 0
@@ -67,7 +79,7 @@ Partial Class Main
         'PictureBox2
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.White
-        Me.PictureBox2.Location = New System.Drawing.Point(331, -43)
+        Me.PictureBox2.Location = New System.Drawing.Point(264, -43)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(23, 135)
         Me.PictureBox2.TabIndex = 1
@@ -76,7 +88,7 @@ Partial Class Main
         'PictureBox3
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.White
-        Me.PictureBox3.Location = New System.Drawing.Point(505, -43)
+        Me.PictureBox3.Location = New System.Drawing.Point(405, -43)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(23, 135)
         Me.PictureBox3.TabIndex = 2
@@ -85,7 +97,7 @@ Partial Class Main
         'PictureBox4
         '
         Me.PictureBox4.BackColor = System.Drawing.Color.White
-        Me.PictureBox4.Location = New System.Drawing.Point(159, 133)
+        Me.PictureBox4.Location = New System.Drawing.Point(123, 133)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(23, 135)
         Me.PictureBox4.TabIndex = 3
@@ -94,7 +106,7 @@ Partial Class Main
         'PictureBox5
         '
         Me.PictureBox5.BackColor = System.Drawing.Color.White
-        Me.PictureBox5.Location = New System.Drawing.Point(331, 133)
+        Me.PictureBox5.Location = New System.Drawing.Point(264, 133)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(23, 135)
         Me.PictureBox5.TabIndex = 4
@@ -103,7 +115,7 @@ Partial Class Main
         'PictureBox6
         '
         Me.PictureBox6.BackColor = System.Drawing.Color.White
-        Me.PictureBox6.Location = New System.Drawing.Point(505, 133)
+        Me.PictureBox6.Location = New System.Drawing.Point(405, 133)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(23, 135)
         Me.PictureBox6.TabIndex = 5
@@ -112,7 +124,7 @@ Partial Class Main
         'PictureBox7
         '
         Me.PictureBox7.BackColor = System.Drawing.Color.White
-        Me.PictureBox7.Location = New System.Drawing.Point(159, 303)
+        Me.PictureBox7.Location = New System.Drawing.Point(123, 303)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(23, 135)
         Me.PictureBox7.TabIndex = 6
@@ -121,7 +133,7 @@ Partial Class Main
         'PictureBox8
         '
         Me.PictureBox8.BackColor = System.Drawing.Color.White
-        Me.PictureBox8.Location = New System.Drawing.Point(331, 303)
+        Me.PictureBox8.Location = New System.Drawing.Point(264, 303)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(23, 135)
         Me.PictureBox8.TabIndex = 7
@@ -130,7 +142,7 @@ Partial Class Main
         'PictureBox9
         '
         Me.PictureBox9.BackColor = System.Drawing.Color.White
-        Me.PictureBox9.Location = New System.Drawing.Point(505, 303)
+        Me.PictureBox9.Location = New System.Drawing.Point(405, 303)
         Me.PictureBox9.Name = "PictureBox9"
         Me.PictureBox9.Size = New System.Drawing.Size(23, 135)
         Me.PictureBox9.TabIndex = 8
@@ -139,7 +151,7 @@ Partial Class Main
         'PictureBox10
         '
         Me.PictureBox10.BackColor = System.Drawing.Color.White
-        Me.PictureBox10.Location = New System.Drawing.Point(159, 482)
+        Me.PictureBox10.Location = New System.Drawing.Point(123, 482)
         Me.PictureBox10.Name = "PictureBox10"
         Me.PictureBox10.Size = New System.Drawing.Size(23, 135)
         Me.PictureBox10.TabIndex = 9
@@ -148,7 +160,7 @@ Partial Class Main
         'PictureBox11
         '
         Me.PictureBox11.BackColor = System.Drawing.Color.White
-        Me.PictureBox11.Location = New System.Drawing.Point(331, 482)
+        Me.PictureBox11.Location = New System.Drawing.Point(264, 482)
         Me.PictureBox11.Name = "PictureBox11"
         Me.PictureBox11.Size = New System.Drawing.Size(23, 135)
         Me.PictureBox11.TabIndex = 10
@@ -157,7 +169,7 @@ Partial Class Main
         'PictureBox12
         '
         Me.PictureBox12.BackColor = System.Drawing.Color.White
-        Me.PictureBox12.Location = New System.Drawing.Point(505, 482)
+        Me.PictureBox12.Location = New System.Drawing.Point(405, 482)
         Me.PictureBox12.Name = "PictureBox12"
         Me.PictureBox12.Size = New System.Drawing.Size(23, 135)
         Me.PictureBox12.TabIndex = 11
@@ -171,9 +183,9 @@ Partial Class Main
         'Car
         '
         Me.Car.Image = CType(resources.GetObject("Car.Image"), System.Drawing.Image)
-        Me.Car.Location = New System.Drawing.Point(215, 385)
+        Me.Car.Location = New System.Drawing.Point(160, 385)
         Me.Car.Name = "Car"
-        Me.Car.Size = New System.Drawing.Size(71, 158)
+        Me.Car.Size = New System.Drawing.Size(90, 158)
         Me.Car.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Car.TabIndex = 12
         Me.Car.TabStop = False
@@ -186,12 +198,76 @@ Partial Class Main
         '
         Me.Right_mover.Interval = 10
         '
+        'EnemyCar1
+        '
+        Me.EnemyCar1.Image = CType(resources.GetObject("EnemyCar1.Image"), System.Drawing.Image)
+        Me.EnemyCar1.Location = New System.Drawing.Point(25, 16)
+        Me.EnemyCar1.Name = "EnemyCar1"
+        Me.EnemyCar1.Size = New System.Drawing.Size(71, 104)
+        Me.EnemyCar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.EnemyCar1.TabIndex = 13
+        Me.EnemyCar1.TabStop = False
+        '
+        'EnemyCar2
+        '
+        Me.EnemyCar2.Image = CType(resources.GetObject("EnemyCar2.Image"), System.Drawing.Image)
+        Me.EnemyCar2.Location = New System.Drawing.Point(171, 12)
+        Me.EnemyCar2.Name = "EnemyCar2"
+        Me.EnemyCar2.Size = New System.Drawing.Size(71, 104)
+        Me.EnemyCar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.EnemyCar2.TabIndex = 14
+        Me.EnemyCar2.TabStop = False
+        '
+        'EnemyCar3
+        '
+        Me.EnemyCar3.Image = CType(resources.GetObject("EnemyCar3.Image"), System.Drawing.Image)
+        Me.EnemyCar3.Location = New System.Drawing.Point(314, 16)
+        Me.EnemyCar3.Name = "EnemyCar3"
+        Me.EnemyCar3.Size = New System.Drawing.Size(71, 104)
+        Me.EnemyCar3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.EnemyCar3.TabIndex = 15
+        Me.EnemyCar3.TabStop = False
+        '
+        'EnemyCar4
+        '
+        Me.EnemyCar4.Image = CType(resources.GetObject("EnemyCar4.Image"), System.Drawing.Image)
+        Me.EnemyCar4.Location = New System.Drawing.Point(451, 16)
+        Me.EnemyCar4.Name = "EnemyCar4"
+        Me.EnemyCar4.Size = New System.Drawing.Size(71, 104)
+        Me.EnemyCar4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.EnemyCar4.TabIndex = 16
+        Me.EnemyCar4.TabStop = False
+        '
+        'Enemy1_Mover
+        '
+        Me.Enemy1_Mover.Enabled = True
+        Me.Enemy1_Mover.Interval = 10
+        '
+        'Enemy2_Mover
+        '
+        Me.Enemy2_Mover.Enabled = True
+        Me.Enemy2_Mover.Interval = 5
+        '
+        'Enemy3_Mover
+        '
+        Me.Enemy3_Mover.Enabled = True
+        Me.Enemy3_Mover.Interval = 5
+        '
+        'Enemy4_Mover
+        '
+        Me.Enemy4_Mover.Enabled = True
+        Me.Enemy4_Mover.Interval = 5
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkGray
-        Me.ClientSize = New System.Drawing.Size(680, 555)
+        Me.ClientSize = New System.Drawing.Size(545, 555)
+        Me.Controls.Add(Me.EnemyCar4)
+        Me.Controls.Add(Me.EnemyCar3)
+        Me.Controls.Add(Me.EnemyCar2)
+        Me.Controls.Add(Me.EnemyCar1)
         Me.Controls.Add(Me.Car)
         Me.Controls.Add(Me.PictureBox12)
         Me.Controls.Add(Me.PictureBox11)
@@ -221,6 +297,10 @@ Partial Class Main
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Car, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EnemyCar1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EnemyCar2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EnemyCar3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EnemyCar4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -241,4 +321,12 @@ Partial Class Main
     Friend WithEvents Car As PictureBox
     Friend WithEvents Left_mover As Timer
     Friend WithEvents Right_mover As Timer
+    Friend WithEvents EnemyCar1 As PictureBox
+    Friend WithEvents EnemyCar2 As PictureBox
+    Friend WithEvents EnemyCar3 As PictureBox
+    Friend WithEvents EnemyCar4 As PictureBox
+    Friend WithEvents Enemy1_Mover As Timer
+    Friend WithEvents Enemy2_Mover As Timer
+    Friend WithEvents Enemy3_Mover As Timer
+    Friend WithEvents Enemy4_Mover As Timer
 End Class
