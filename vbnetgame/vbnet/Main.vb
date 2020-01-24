@@ -1,9 +1,10 @@
 ﻿Public Class Main
-    Dim speed As Integer
+
     Dim road(11) As PictureBox
     Dim Enemy(3) As PictureBox
+    Dim time As Integer = 5
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        speed = 3
+
         road(0) = PictureBox1
         road(1) = PictureBox2
         road(2) = PictureBox3
@@ -25,12 +26,23 @@
 
     Private Sub RoadMover_Tick(sender As Object, e As EventArgs) Handles RoadMover.Tick
         For x As Integer = 0 To 11
-            road(x).Top += 5
+            road(x).Top += 4
             If road(x).Top >= Me.Height Then
                 road(x).Top = -road(x).Height
             End If
         Next
-
+        If BusCar.Bounds.IntersectsWith(EnemyCar1.Bounds()) Then
+            gameOver()
+        End If
+        If BusCar.Bounds.IntersectsWith(EnemyCar2.Bounds()) Then
+            gameOver()
+        End If
+        If BusCar.Bounds.IntersectsWith(EnemyCar3.Bounds()) Then
+            gameOver()
+        End If
+        If BusCar.Bounds.IntersectsWith(EnemyCar4.Bounds()) Then
+            gameOver()
+        End If
     End Sub
 
     Private Sub Main_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
@@ -43,14 +55,14 @@
     End Sub
 
     Private Sub Right_mover_Tick(sender As Object, e As EventArgs) Handles Right_mover.Tick
-        If (Car.Location.X < 474) Then
-            Car.Left += 5
+        If (BusCar.Location.X < 474) Then
+            BusCar.Left += 5
         End If
     End Sub
 
     Private Sub Left_mover_Tick(sender As Object, e As EventArgs) Handles Left_mover.Tick
-        If (Car.Location.X > 0) Then
-            Car.Left -= 5
+        If (BusCar.Location.X > 0) Then
+            BusCar.Left -= 5
         End If
     End Sub
 
@@ -60,25 +72,41 @@
     End Sub
 
     Private Sub Enemy1_Mover_Tick(sender As Object, e As EventArgs) Handles Enemy1_Mover.Tick
-        For y = 0 To 3
-            Enemy(y).Top += 10
-
-            If Enemy(y).Top > Me.Height Then
-                Enemy(y).Top = -Int(Rnd() * 500)
-            End If
-        Next
-
+        EnemyCar1.Top += 3
+        If EnemyCar1.Top >= Me.Height Then
+            EnemyCar1.Top = -EnemyCar1.Height
+        End If
     End Sub
 
     Private Sub Enemy2_Mover_Tick(sender As Object, e As EventArgs) Handles Enemy2_Mover.Tick
-
+        EnemyCar2.Top += 2
+        If EnemyCar2.Top >= Me.Height Then
+            EnemyCar2.Top = -EnemyCar2.Height
+        End If
     End Sub
 
     Private Sub Enemy3_Mover_Tick(sender As Object, e As EventArgs) Handles Enemy3_Mover.Tick
-
+        EnemyCar3.Top += 5
+        If EnemyCar3.Top >= Me.Height Then
+            EnemyCar3.Top = -EnemyCar3.Height
+        End If
     End Sub
 
     Private Sub Enemy4_Mover_Tick(sender As Object, e As EventArgs) Handles Enemy4_Mover.Tick
+        EnemyCar4.Top += 4
+        If EnemyCar4.Top >= Me.Height Then
+            EnemyCar4.Top = -EnemyCar4.Height
+        End If
+    End Sub
 
+    Public Sub gameOver()
+        RoadMover.Stop()
+        Enemy1_Mover.Stop()
+        Enemy2_Mover.Stop()
+        Enemy3_Mover.Stop()
+        Enemy4_Mover.Stop()
+        Label2.Visible = True
+        Left_mover.Stop()
+        Right_mover.Stop()
     End Sub
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Main
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Main
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
@@ -37,7 +37,7 @@ Partial Class Main
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
         Me.RoadMover = New System.Windows.Forms.Timer(Me.components)
-        Me.Car = New System.Windows.Forms.PictureBox()
+        Me.BusCar = New System.Windows.Forms.PictureBox()
         Me.Left_mover = New System.Windows.Forms.Timer(Me.components)
         Me.Right_mover = New System.Windows.Forms.Timer(Me.components)
         Me.EnemyCar1 = New System.Windows.Forms.PictureBox()
@@ -45,6 +45,9 @@ Partial Class Main
         Me.EnemyCar3 = New System.Windows.Forms.PictureBox()
         Me.EnemyCar4 = New System.Windows.Forms.PictureBox()
         Me.Enemy1_Mover = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer = New System.Windows.Forms.Timer(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Enemy2_Mover = New System.Windows.Forms.Timer(Me.components)
         Me.Enemy3_Mover = New System.Windows.Forms.Timer(Me.components)
         Me.Enemy4_Mover = New System.Windows.Forms.Timer(Me.components)
@@ -60,7 +63,7 @@ Partial Class Main
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Car, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BusCar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EnemyCar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EnemyCar2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EnemyCar3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -180,15 +183,17 @@ Partial Class Main
         Me.RoadMover.Enabled = True
         Me.RoadMover.Interval = 10
         '
-        'Car
+        'BusCar
         '
-        Me.Car.Image = CType(resources.GetObject("Car.Image"), System.Drawing.Image)
-        Me.Car.Location = New System.Drawing.Point(160, 385)
-        Me.Car.Name = "Car"
-        Me.Car.Size = New System.Drawing.Size(90, 158)
-        Me.Car.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Car.TabIndex = 12
-        Me.Car.TabStop = False
+        Me.BusCar.Image = CType(resources.GetObject("BusCar.Image"), System.Drawing.Image)
+        Me.BusCar.Location = New System.Drawing.Point(171, 351)
+        Me.BusCar.Margin = New System.Windows.Forms.Padding(0)
+        Me.BusCar.Name = "BusCar"
+        Me.BusCar.Size = New System.Drawing.Size(70, 176)
+        Me.BusCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.BusCar.TabIndex = 12
+        Me.BusCar.TabStop = False
+        Me.BusCar.Tag = ""
         '
         'Left_mover
         '
@@ -200,10 +205,11 @@ Partial Class Main
         '
         'EnemyCar1
         '
+        Me.EnemyCar1.BackColor = System.Drawing.Color.Transparent
         Me.EnemyCar1.Image = CType(resources.GetObject("EnemyCar1.Image"), System.Drawing.Image)
-        Me.EnemyCar1.Location = New System.Drawing.Point(25, 16)
+        Me.EnemyCar1.Location = New System.Drawing.Point(21, 16)
         Me.EnemyCar1.Name = "EnemyCar1"
-        Me.EnemyCar1.Size = New System.Drawing.Size(71, 104)
+        Me.EnemyCar1.Size = New System.Drawing.Size(63, 104)
         Me.EnemyCar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.EnemyCar1.TabIndex = 13
         Me.EnemyCar1.TabStop = False
@@ -213,7 +219,7 @@ Partial Class Main
         Me.EnemyCar2.Image = CType(resources.GetObject("EnemyCar2.Image"), System.Drawing.Image)
         Me.EnemyCar2.Location = New System.Drawing.Point(171, 12)
         Me.EnemyCar2.Name = "EnemyCar2"
-        Me.EnemyCar2.Size = New System.Drawing.Size(71, 104)
+        Me.EnemyCar2.Size = New System.Drawing.Size(63, 104)
         Me.EnemyCar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.EnemyCar2.TabIndex = 14
         Me.EnemyCar2.TabStop = False
@@ -223,7 +229,7 @@ Partial Class Main
         Me.EnemyCar3.Image = CType(resources.GetObject("EnemyCar3.Image"), System.Drawing.Image)
         Me.EnemyCar3.Location = New System.Drawing.Point(314, 16)
         Me.EnemyCar3.Name = "EnemyCar3"
-        Me.EnemyCar3.Size = New System.Drawing.Size(71, 104)
+        Me.EnemyCar3.Size = New System.Drawing.Size(63, 104)
         Me.EnemyCar3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.EnemyCar3.TabIndex = 15
         Me.EnemyCar3.TabStop = False
@@ -233,7 +239,7 @@ Partial Class Main
         Me.EnemyCar4.Image = CType(resources.GetObject("EnemyCar4.Image"), System.Drawing.Image)
         Me.EnemyCar4.Location = New System.Drawing.Point(451, 16)
         Me.EnemyCar4.Name = "EnemyCar4"
-        Me.EnemyCar4.Size = New System.Drawing.Size(71, 104)
+        Me.EnemyCar4.Size = New System.Drawing.Size(63, 104)
         Me.EnemyCar4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.EnemyCar4.TabIndex = 16
         Me.EnemyCar4.TabStop = False
@@ -243,20 +249,47 @@ Partial Class Main
         Me.Enemy1_Mover.Enabled = True
         Me.Enemy1_Mover.Interval = 10
         '
+        'Timer
+        '
+        Me.Timer.Enabled = True
+        Me.Timer.Interval = 1000
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(263, 273)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(27, 29)
+        Me.Label1.TabIndex = 17
+        Me.Label1.Text = "5"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.White
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(146, 204)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(253, 42)
+        Me.Label2.TabIndex = 18
+        Me.Label2.Text = "GAME OVER"
+        Me.Label2.Visible = False
+        '
         'Enemy2_Mover
         '
         Me.Enemy2_Mover.Enabled = True
-        Me.Enemy2_Mover.Interval = 5
+        Me.Enemy2_Mover.Interval = 10
         '
         'Enemy3_Mover
         '
         Me.Enemy3_Mover.Enabled = True
-        Me.Enemy3_Mover.Interval = 5
+        Me.Enemy3_Mover.Interval = 10
         '
         'Enemy4_Mover
         '
         Me.Enemy4_Mover.Enabled = True
-        Me.Enemy4_Mover.Interval = 5
+        Me.Enemy4_Mover.Interval = 10
         '
         'Main
         '
@@ -264,11 +297,13 @@ Partial Class Main
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkGray
         Me.ClientSize = New System.Drawing.Size(545, 555)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.EnemyCar4)
         Me.Controls.Add(Me.EnemyCar3)
         Me.Controls.Add(Me.EnemyCar2)
         Me.Controls.Add(Me.EnemyCar1)
-        Me.Controls.Add(Me.Car)
+        Me.Controls.Add(Me.BusCar)
         Me.Controls.Add(Me.PictureBox12)
         Me.Controls.Add(Me.PictureBox11)
         Me.Controls.Add(Me.PictureBox10)
@@ -296,12 +331,13 @@ Partial Class Main
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Car, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BusCar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EnemyCar1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EnemyCar2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EnemyCar3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EnemyCar4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -318,7 +354,7 @@ Partial Class Main
     Friend WithEvents PictureBox11 As PictureBox
     Friend WithEvents PictureBox12 As PictureBox
     Friend WithEvents RoadMover As Timer
-    Friend WithEvents Car As PictureBox
+    Friend WithEvents BusCar As PictureBox
     Friend WithEvents Left_mover As Timer
     Friend WithEvents Right_mover As Timer
     Friend WithEvents EnemyCar1 As PictureBox
@@ -326,6 +362,9 @@ Partial Class Main
     Friend WithEvents EnemyCar3 As PictureBox
     Friend WithEvents EnemyCar4 As PictureBox
     Friend WithEvents Enemy1_Mover As Timer
+    Friend WithEvents Timer As Timer
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
     Friend WithEvents Enemy2_Mover As Timer
     Friend WithEvents Enemy3_Mover As Timer
     Friend WithEvents Enemy4_Mover As Timer
